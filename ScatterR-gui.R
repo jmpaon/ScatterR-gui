@@ -1,7 +1,18 @@
 
-scatter.gui <- function() {
+ScatterR.gui <- function() {
 
-#~ 	library(scatter) #TODO
+	# Try to load or if necessary install ScatterR package
+	if(!require(ScatterR)){
+		print("trying to install ScatterR package")
+		install.packages("https://github.com/mkoske/Scatter-R/releases/download/v0.9-beta/ScatterR_0.9.tar.gz", repos = NULL, method = "libcurl")
+		if(require(ScatterR)){
+			print("ScatterR installed and loaded")
+		} else {
+			stop("could not install ScatterR")
+		}
+	}
+	
+	# Require other dependencies
 	require(gWidgets2)
 	require(gWidgets2RGtk2)
 	options(guiToolkit="RGtk2")
