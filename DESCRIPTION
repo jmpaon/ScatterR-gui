@@ -1,0 +1,10 @@
+Package: ScatterR-gui
+Type: Package
+Title: A GUI for Scatter-R, an implementation of scatter-algorithm in R
+Version: 0.9
+Date: 2016-01-08
+Author: Tommi Tuominen, Juha Panula-Ontto, Miika Koskela
+Maintainer: Juha Panula-Ontto <juha.panulaontto@gmail.com>
+Description: see README for more information.
+License: GPL-3
+RoxygenNote: 5.0.1
