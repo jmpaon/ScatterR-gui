@@ -1,3 +1,4 @@
+#' Display the GUI main window
 
 ScatterR.gui <- function() {
 
