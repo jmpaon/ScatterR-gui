@@ -9,6 +9,7 @@
 #' @importFrom gWidgets2 gcheckboxgroup
 #' @importFrom gWidgets2 svalue
 #' @importFrom gWidgets2 svalue<-
+#' @importFrom ScatterR  scatter.preprocess
 #' @export
 #'
 ScatterR.gui <- function() {
