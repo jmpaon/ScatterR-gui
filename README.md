@@ -108,10 +108,10 @@ is described, starting from the top-most elements.
 	- Selects the calculation procedure for the **Scatter** algorithm.
 	The different options are described 
 	in the **Scatter** algorithm documentation.
-	- *Single*
-	- *Variables*
-	- *Classes*
-	- *All*
+		- *Single*
+		- *Variables*
+		- *Classes*
+		- *All*
 - **Calculate** button
 	- Starts the **Scatter** calculation with the selected data and options.
 	Data is first preprocessed according to the preprocessing options
