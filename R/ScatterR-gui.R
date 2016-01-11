@@ -1,23 +1,20 @@
 #' Display the GUI main window
-
+#'
+#' @importFrom gWidgets2 ggroup
+#' @importFrom gWidgets2 gwindow
+#' @importFrom gWidgets2 glabel
+#' @importFrom gWidgets2 gbutton
+#' @importFrom gWidgets2 gfile
+#' @importFrom gWidgets2 gradio
+#' @importFrom gWidgets2 gcheckboxgroup
+#' @importFrom gWidgets2 svalue
+#' @importFrom gWidgets2 svalue<-
+#' @importFrom ScatterR  scatter.preprocess
+#' @export
+#'
 ScatterR.gui <- function() {
 
-	# Try to load or if necessary install ScatterR package
-	if(!require(ScatterR)){
-		print("trying to install ScatterR package")
-		install.packages("https://github.com/mkoske/Scatter-R/releases/download/v0.9-beta/ScatterR_0.9.tar.gz", repos = NULL, method = "libcurl")
-		if(require(ScatterR)){
-			print("ScatterR installed and loaded")
-		} else {
-			stop("could not install ScatterR")
-		}
-	}
-	
-	# Require other dependencies
-	require(gWidgets2)
-	require(gWidgets2RGtk2)
 	options(guiToolkit="RGtk2")
-
 	scattergui <- new.env()
 
 	# AVAILABLE OPTIONS
@@ -27,10 +24,6 @@ ScatterR.gui <- function() {
 	scattergui$opt.missing    <- c("Do nothing", "Replace with class median/mode", "Replace with column median/mode", "Remove rows")
 	## Calculation procedures
 	scattergui$opt.calcProcedure <- c("Single", "Variables", "Classes", "All")
-
-	# OTHER FILES
-	source("scatter_preprocess.R")
-	source("algorithm/scatter.R")
 
 # ============ HANDLERS AND FUNCTIONS FOR SCATTER GUI ================ #
 	
