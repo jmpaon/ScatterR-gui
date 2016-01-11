@@ -31,7 +31,7 @@ ScatterR.gui <- function() {
 	scattergui$hand.showHelp <- function(h, ...) {
 		helpWindow <- gwindow(title="Help")
 		cont.a <- ggroup(cont=helpWindow, horizontal=FALSE, expand=TRUE, fill=TRUE)
-		filename <- "helptext.txt"
+		filename <- "../helptext.txt"
 		helptext <- readChar(filename, file.info(filename)$size)
 		lbl_helptext <- glabel(helptext, cont=cont.a, expand=TRUE, fill=TRUE)
 		btn_close <- gbutton("Close", cont=cont.a, handler=function(h,...){dispose(helpWindow)})
