@@ -27,6 +27,85 @@ calling the ```scatter.preprocess``` and ```scatter``` functions
 with the selected arguments
 and ultimately saving the results.
 
+## Installation
+
+> Note, that these instructions are same as in ScatterR-algoritmipaketin README-tiedostossa (commit: 1c05c01f7b92c1458a3e53dc41ae50366616359a).
+
+Follow these instructions to install Scatter-project. If you know, what you're doing, you can choose the installation method of your liking.
+
+These installation instructions are tested with Windows 8 and Windows 10 operating systems using R versions 3.2.2 and 3.2.3.
+
+### ScatterR-package
+ 
+Follow these steps to install the Scatter-R package, which contains the algorithm itself and command line interface to it. Installation of the GUI package is described later.
+
+The name of the package is ScatterR even though the repository and project name has dash in it. This is because R doesn't allow dashes in the name of the package.
+
+Go to the [Releases](https://github.com/Tommytronic/Scatter-R/releases) page of the project and find out, which is the most recent release. Under the heading "Downloads" you will find source archives and at least one archive, which name ends with `_release`. Copy it's URL to clipboard since you will need it.
+ 
+Install the package using following commands.
+
+> Note, that the URL may vary depending on the release. In general, the package name ends with `_release`.
+
+#### Install the package.
+
+Install the package by issuing following command in R console.
+
+```R
+install.packages("https://github.com/Tommytronic/Scatter-R/releases/download/v0.9/ScatterR_0.9_release.tar.gz", repos = NULL, method = "libcurl")
+```
+
+#### Test the installation
+
+After the installation has completed without errors, it's time to test the installation.
+
+Issue following commands.
+
+```R
+library(ScatterR)
+run(iris)
+```
+
+The `library`-command loads and attaches the ScatterR package to the search path and it's ready to be used.
+
+The `run`-command runs the usecase `single` for the whole iris dataset. The iris dataset is part of R and you don't need to get and install it.
+
+After the `run` is completed, it prints out some information about the results. More information about these on Usage-section.
+
+### GUI for ScatterR
+
+This package is not currently in CRAN repositories and there's some other issues too, so it's installation is not as simple as it could be. Also, it's further development idea to find out how to simplify the installation process of the GUI.
+
+We have separated GUI from ScatterR package and those who needs or wants GUI, can install it as a separate package. The GUI and these same instructions can be found [here](https://github.com/jmpaon/scatterr-gui). 
+
+Our GUI is written using gWidgets2 and GTK, so you need to ensure those are installed too.
+
+Issue following command to install all other GUI dependencies but GTK-package itself.
+
+```R
+install.packages("RGtk2", depen = T)
+library(RGtk2)
+```
+
+When you issue `install.packages("RGtk2", depen = T)`-command, you will be prompted for repository to use. Choose a location close to you and click OK.
+
+After you issue `library(RGtk2)`-command, you get an error and prompt to install GTK-library. Click OK to install the GTK-bundle. After that, restart R console and issue following commands. [5]
+
+```R
+install.packages("gWidgets2RGtk2")
+```
+
+Now all GUI dependencies are installed and GUI itself can be installed by issuing following command.
+
+```R
+install.packages("https://github.com/jmpaon/ScatterR-gui/releases/download/0.9/ScatterRGui_0.9.tar.gz", repos = NULL, method = "libcurl")
+```
+
+After installation is complete, you can load and run the GUI by issuing commands `library(ScatterRGui)` and `ScatterR.gui()`.
+
+You might get some version warning when installing or running GUI, but if everything works, you can dismiss those. Otherwise, please open an [issue](https://github.com/jmpaon/ScatterR-gui/issues) at Github.
+
+
 Usage
 -----
 
