@@ -296,7 +296,7 @@ ScatterR.gui <- function() {
 		scattergui$var.options.usecase            = tolower(svalue(scattergui$rdo_selectCalculation))
 		scattergui$var.options.baselineIterations = svalue(scattergui$spn_selectBaselineIterations)
 
-		scattergui$ppdata <- scatter.preprocess (
+		scattergui$ppdata <- ScatterR::scatter.preprocess (
 			df                  = scattergui$sdata,
 			classvar            = scattergui$var.classvar,
 			included.attributes = scattergui$var.selected.attributes,
@@ -306,7 +306,7 @@ ScatterR.gui <- function() {
 			na.action           = scattergui$func.na.action_index_to_name(svalue(scattergui$rdo_ppMissing, index=TRUE))
 		)
 
-		scattergui$result <- run (
+		scattergui$result <- ScatterR::run (
 			data                = scattergui$ppdata,
 			classlabel          = scattergui$var.classvar,
 			distanceMethod      = scattergui$var.options.distanceMethod,
