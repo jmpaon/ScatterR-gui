@@ -29,7 +29,7 @@ and ultimately saving the results.
 
 ## Installation
 
-See installation instructions [here](https://github.com/Tommytronic/Scatter-R/blob/83b081b754c1358745cba9d7ff2128a95885712b/README.md).
+See installation instructions [here](https://github.com/Tommytronic/Scatter-R/blob/master/README.md).
 
 Usage
 -----
