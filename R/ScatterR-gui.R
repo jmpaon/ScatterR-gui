@@ -361,12 +361,13 @@ ScatterR.gui <- function() {
 		
 		## Plotting variable-wise scatter values against baseline values
 		hand.plotVariableScatter <- function(h, ...) {
-			barplot(
-				rbind(scattergui$result$means, scattergui$result$baselines),
-				ylim=c(0,1),
-				ylab="Means",
-				beside=TRUE
-			)
+				barplot(
+					rbind(scattergui$result$means, scattergui$result$baselines),
+					ylim=c(0,1),
+					ylab="Means",
+					names.arg=rownames(scattergui$result$values),
+					beside=TRUE
+				)
 			
 			title(main="Variable-wise scatter values against baseline values")
 		}
@@ -377,6 +378,7 @@ ScatterR.gui <- function() {
 				rbind(scattergui$result$means, scattergui$result$baselines),
 				ylim=c(0,1),
 				ylab="Means",
+				names.arg=rownames(scattergui$result$values),
 				beside=TRUE
 			)
 			
